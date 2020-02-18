@@ -1,0 +1,60 @@
+@import './colors'
+
+html, head, body, div
+  margin: 0
+  padding: 0
+  border: 0
+  outline: 0
+  font-size: 100%
+  vertical-align: baseline
+  background: transparent
+
+h1, h2, h3, h4, h5, h6
+  font-family: 'Enriqueta', 'Helvetica', sans-serif
+  color: #444
+  font-weight: 700
+
+body, div
+  font-family: 'Enriqueta', 'Helvetica', sans-serif
+  color: #444
+
+a
+  text-decoration: none
+  color: $dark_green
+
+a.danceLink, a.danceLink h2, a.danceLink h3
+  color: $danceColor
+  &:hover, &:active, &:focus
+    color: #60016D
+a.travelLink, a.travelLink h2, a.travelLink h3
+  color: $travelColor
+  &:hover, &:active, &:focus
+    color: #A65900
+a.techLink, a.techLink h2, a.techLink h3
+  color: $techColor
+  &:hover, &:active, &:focus
+    color: #358CAE
+
+.wrapper
+  max-width: 900px
+  margin: auto
+
+.wrapper-focused
+  max-width: 650px
+  margin: auto
+  padding-bottom: 3rem
+
+#Footer
+  margin-top: 30px
+  background: $light_green
+  .Footer--links
+    height: $footer_height
+    display: flex
+    align-items: center
+    justify-content: center
+    font-family: 'Love Ya Like A Sister', 'myriad pro', helvetica
+    font-size: 1.3em
+    a
+      margin: 0 20px
+    @media only screen and (max-width: 768px)
+      font-size: 1.1em

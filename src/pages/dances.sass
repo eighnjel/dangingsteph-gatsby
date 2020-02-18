@@ -1,0 +1,60 @@
+@import '../components/colors'
+
+// #DanceIndex
+//   max-width: 900px
+//   margin: auto
+
+.DanceList
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-between
+
+.DanceList--dance
+  margin-bottom: 1.5rem
+
+
+.DanceList--dance a
+  text-align: center
+  margin: 1rem auto
+  .DanceList--image-container
+    width: 400px
+    height: 267px
+    overflow: hidden
+  img
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    -webkit-filter: grayscale(50%);
+    filter: grayscale(50%);
+  &:hover img
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+  h3
+    margin: 1.5rem auto
+  &:hover h3
+    text-decoration: underline
+
+#Dance
+  h2
+    color: $danceColor
+  .italic
+    font-style: oblique
+
+  .Dance--media
+    display: flex
+    margin: 1rem auto 2rem
+    justify-content: center
+    text-align: center
+    iframe
+      flex-grow: 1
+    img
+      margin-bottom: 1rem
+
+  .Dance--title
+    font-weight: 700
+    line-height: 1.75rem
+  .Dance--blurb
+    margin: 1rem auto

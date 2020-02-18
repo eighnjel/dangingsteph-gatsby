@@ -5,12 +5,21 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
-    const blogPost = path.resolve('./src/templates/blog-post.js')
+    const blogPost = path.resolve('./src/templates/blog-post.js');
+    const dance = path.resolve('./src/templates/dance.js');
     resolve(
       graphql(
         `
           {
             allContentfulBlogPost {
+              edges {
+                node {
+                  title
+                  slug
+                }
+              }
+            }
+            allContentfulDance {
               edges {
                 node {
                   title
@@ -33,6 +42,17 @@ exports.createPages = ({ graphql, actions }) => {
             component: blogPost,
             context: {
               slug: post.node.slug
+            },
+          })
+        })
+
+        const dances = result.data.allContentfulDance.edges
+        dances.forEach((d, index) => {
+          createPage({
+            path: `/dances/${d.node.slug}/`,
+            component: dance,
+            context: {
+              slug: d.node.slug
             },
           })
         })
